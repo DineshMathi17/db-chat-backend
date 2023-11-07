@@ -10,6 +10,10 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Welcome our to DB-Chat API...");
+});
+
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
